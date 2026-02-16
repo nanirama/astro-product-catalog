@@ -3,7 +3,6 @@ title: "Electric Scissor Lift, 13' - 14'"
 slug: "electric-scissor-lift-13-14"
 
 category:
-  - "aerial-work-platforms"
   - "electric-scissor-lifts"
 
 short_description: "Electric scissor lifts in the 13'–14' platform height range designed for indoor/outdoor work with reliable performance and smooth vertical lifting."

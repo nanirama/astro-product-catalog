@@ -7,6 +7,26 @@ import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
+export async function getStaticPaths() {
+  const allProducts: CollectionEntry<"products">[] = await getCollection("products");
+  
+  const productsPerPage = 4;
+  const totalPages = Math.max(1, Math.ceil(allProducts.length / productsPerPage));
+  
+  // Generate paths for pages 2 and onwards (page 1 is handled by index.astro)
+  const paths: Array<{ params: { page: string } }> = [];
+  for (let page = 2; page <= totalPages; page++) {
+    paths.push({
+      params: { page: page.toString() },
+    });
+  }
+  
+  return paths;
+}
+
+const { page } = Astro.params;
+const currentPage = parseInt(page || "1", 10);
+
 // Get all products
 const allProducts: CollectionEntry<"products">[] = await getCollection("products");
 
@@ -17,15 +37,14 @@ const allCategories = Array.from(
   )
 ).sort();
 
-// Show page 1 of all products (3 per page)
+// Pagination: 4 products per page
 const productsPerPage = 4;
-const currentPage = 1;
 const totalPages = Math.max(1, Math.ceil(allProducts.length / productsPerPage));
 const startIndex = (currentPage - 1) * productsPerPage;
 const endIndex = startIndex + productsPerPage;
 const paginatedProducts = allProducts.slice(startIndex, endIndex);
 
-const pageTitle = `Products | ${SITE.title}`;
+const pageTitle = currentPage > 1 ? `Products - Page ${currentPage} | ${SITE.title}` : `Products | ${SITE.title}`;
 const metaDescription = "Browse our catalog of products";
 ---
 
