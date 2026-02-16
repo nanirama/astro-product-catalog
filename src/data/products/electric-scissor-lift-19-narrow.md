@@ -8,8 +8,8 @@ category:
 
 short_description: "Electric scissor lifts with a 19′ narrow platform — ideal for confined spaces with quiet, clean operation and smooth vertical lift."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Platform height up to 19′ (narrow)"

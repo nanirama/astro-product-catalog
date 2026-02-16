@@ -10,7 +10,7 @@ import { SITE } from "@data/constants";
 export async function getStaticPaths() {
   const allProducts: CollectionEntry<"products">[] = await getCollection("products");
   
-  const productsPerPage = 4;
+  const productsPerPage = 8;
   const totalPages = Math.max(1, Math.ceil(allProducts.length / productsPerPage));
   
   // Generate paths for pages 2 and onwards (page 1 is handled by index.astro)
@@ -38,7 +38,7 @@ const allCategories = Array.from(
 ).sort();
 
 // Pagination: 4 products per page
-const productsPerPage = 4;
+const productsPerPage = 8;
 const totalPages = Math.max(1, Math.ceil(allProducts.length / productsPerPage));
 const startIndex = (currentPage - 1) * productsPerPage;
 const endIndex = startIndex + productsPerPage;

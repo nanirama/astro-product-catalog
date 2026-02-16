@@ -8,8 +8,8 @@ category:
 
 short_description: "Electric scissor lifts in the 10′–12′ platform height range ideal for indoor work with quiet, clean electric operation and zero emissions."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Platform height 10′–12′"

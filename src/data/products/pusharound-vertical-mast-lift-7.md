@@ -8,8 +8,8 @@ category:
 
 short_description: "Pusharound vertical mast lift with a 7′ platform height — compact and ideal for light maintenance and indoor access applications."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Platform height up to 7′"

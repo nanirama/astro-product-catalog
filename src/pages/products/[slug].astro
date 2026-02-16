@@ -21,7 +21,7 @@ const { Content } = await render(product);
 function formatPrice(price: number | null, currency: string | null): string {
   if (price === null) return "";
   if (currency === null) return `$${price.toLocaleString()}`;
-  return `${currency} ${price.toLocaleString()}`;
+  return `Price: ${currency} ${price.toLocaleString()}`;
 }
 
 // Get all images (main + additional)
@@ -203,14 +203,26 @@ const breadcrumbStructuredData = {
         )}
 
         <!-- About Product -->
-        <div class="mb-6 sm:mb-8">
+        <div class="mb-2">
           <h2 class="text-lg sm:text-xl font-semibold text-neutral-800 mb-3 dark:text-neutral-200">
             About Product
           </h2>
-          <div class="text-neutral-600 leading-relaxed dark:text-neutral-400 prose prose-neutral dark:prose-invert max-w-none prose-sm sm:prose-base" itemprop="description">
+          <div class="mb-4 text-neutral-600 leading-relaxed dark:text-neutral-400 prose prose-neutral dark:prose-invert max-w-none prose-sm sm:prose-base" itemprop="description">
             <Content />
           </div>
+          <div class="mt-auto w-full block my-2">
+            <a
+              href={``}
+              class="inline-block w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-semibold text-white bg-neutral-800 hover:bg-neutral-700 dark:bg-neutral-200 dark:text-neutral-800 dark:hover:bg-neutral-300 rounded-lg transition-colors duration-200 text-center focus:outline-none focus:ring-2 focus:ring-neutral-800 focus:ring-offset-2 dark:focus:ring-neutral-200 min-h-[44px] flex items-center justify-center"
+              aria-label={`Request a quote for ${product.data.title}`}
+            >
+              Request a Quote
+            </a>
+          </div>
         </div>
+
+        <!-- Request a Quote Button -->
+        
       </div>
 
       <!-- Column 3: Product Specifications -->

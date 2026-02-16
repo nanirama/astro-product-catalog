@@ -8,8 +8,8 @@ category:
 
 short_description: "Towable boom lift with 30'–35' reach — ideal for jobs requiring extended horizontal and vertical access and easy transport between sites."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Reach: 30'–35'"

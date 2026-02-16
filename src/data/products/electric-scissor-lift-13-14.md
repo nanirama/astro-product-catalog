@@ -7,8 +7,8 @@ category:
 
 short_description: "Electric scissor lifts in the 13'–14' platform height range designed for indoor/outdoor work with reliable performance and smooth vertical lifting."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Platform height 13'–14'"

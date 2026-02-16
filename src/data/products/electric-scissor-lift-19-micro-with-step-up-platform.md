@@ -8,8 +8,8 @@ category:
 
 short_description: "Electric scissor lift with 19' platform height and step-up platform for compact access jobs where quiet, clean operation is essential."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Platform height up to 19'"

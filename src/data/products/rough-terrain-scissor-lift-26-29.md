@@ -8,8 +8,8 @@ category:
 
 short_description: "Rough terrain scissor lifts with 26′–29′ platform height designed for outdoor work on uneven surfaces with strong traction and stability."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Platform height 26′–29′"

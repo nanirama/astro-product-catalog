@@ -18,7 +18,7 @@ const allCategories = Array.from(
 ).sort();
 
 // Show page 1 of all products (3 per page)
-const productsPerPage = 4;
+const productsPerPage = 8;
 const currentPage = 1;
 const totalPages = Math.max(1, Math.ceil(allProducts.length / productsPerPage));
 const startIndex = (currentPage - 1) * productsPerPage;

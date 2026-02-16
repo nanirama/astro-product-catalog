@@ -8,8 +8,8 @@ category:
 
 short_description: "Electric scissor lift with a 32' wide platform range designed for elevated work with greater width and stability, ideal for larger indoor and outdoor spaces."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Platform height up to 32' (wide)"

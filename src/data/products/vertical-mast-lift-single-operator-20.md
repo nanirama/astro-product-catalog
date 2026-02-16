@@ -8,8 +8,8 @@ category:
 
 short_description: "Single-operator 20-foot vertical mast lift built for tight indoor access, precise positioning, and maintenance tasks."
 
-price: null
-currency: null
+price: 120
+currency: USD
 
 color: []
 dimensions: "Platform height approx. 20 ft"
