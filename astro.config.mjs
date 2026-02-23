@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
+import react from '@astrojs/react';
 
 import mdx from "@astrojs/mdx";
 
@@ -26,6 +27,7 @@ export default defineConfig({
   // },
   prefetch: true,
   integrations: [
+    react(),
     sitemap({
       i18n: {
         defaultLocale: "en", // All urls that don't contain language prefix will be treated as default locale

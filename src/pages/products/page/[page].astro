@@ -6,6 +6,7 @@ import CategoryFilter from "@components/ui/CategoryFilter.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
+import ProductsWithFilter from "@components/products/ProductsWithFilter";
 
 export async function getStaticPaths() {
   const allProducts: CollectionEntry<"products">[] = await getCollection("products");
@@ -44,22 +45,40 @@ const startIndex = (currentPage - 1) * productsPerPage;
 const endIndex = startIndex + productsPerPage;
 const paginatedProducts = allProducts.slice(startIndex, endIndex);
 
-const pageTitle = currentPage > 1 ? `Products - Page ${currentPage} | ${SITE.title}` : `Products | ${SITE.title}`;
-const metaDescription = "Browse our catalog of products";
+const pageTitle = currentPage > 1 ? `Products - Page ${currentPage} | ${SITE.title}` : `ტექნიკა და ინსტრუმენტები | ${SITE.title}`;
+const metaDescription = "მოიძიეთ თქვენი პროექტისთვის საჭირო ტექნიკა და ინსტრუმენტი";
+
+const serializedProducts = paginatedProducts.map((p) => ({
+  slug: p.data.slug,
+  data: {
+    title: p.data.title,
+    price: p.data.price,
+    category: p.data.category[0],
+    image: p.data.main_image,
+    description: p.data.short_description,
+  },
+}));
 ---
 
 <MainLayout title={pageTitle} customDescription={metaDescription}>
   <div class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
     <!-- Page Title -->
     <h1 class="text-4xl font-bold tracking-tight text-balance text-center text-neutral-800 mb-8 md:text-5xl dark:text-neutral-200">
-      Our Catalogs
+      Arenda.ge
     </h1>
 
     <!-- Category Filter -->
     <CategoryFilter categories={allCategories} selectedCategory={null} baseUrl="/products" />
 
+    <ProductsWithFilter
+      client:load
+      allProducts={serializedProducts}
+      productsPerPage={8}
+      currency="₹"
+    />
+
     <!-- Products Grid -->
-    {paginatedProducts.length > 0 ? (
+    <!-- {paginatedProducts.length > 0 ? (
       <div class="flex flex-wrap justify-center gap-6 mb-12">
         {paginatedProducts.map((product) => (
           <ProductCard product={product} />
@@ -71,14 +90,14 @@ const metaDescription = "Browse our catalog of products";
           No products found.
         </p>
       </div>
-    )}
+    )} -->
 
     <!-- Pagination -->
-    <Pagination
+    <!-- <Pagination
       currentPage={currentPage}
       totalPages={totalPages}
       baseUrl="/products"
       pageUrlPattern="/products/page/{page}"
-    />
+    /> -->
   </div>
 </MainLayout>
