@@ -11,7 +11,7 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
    output: "static",
   // https://docs.astro.build/en/guides/images/#authorizing-remote-images
-  site: "https://screwfast.uk",
+  site: "https://www.arenda.ge",
   image: {
     domains: ["images.unsplash.com"],
   },
@@ -32,8 +32,7 @@ export default defineConfig({
       i18n: {
         defaultLocale: "en", // All urls that don't contain language prefix will be treated as default locale
         locales: {
-          en: "en", // The `defaultLocale` value must present in `locales` keys
-          fr: "fr",
+          en: "en",
         },
       },
     }),
@@ -108,14 +107,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://www.arenda.ge" + "/social.webp",
           },
         },
         {
           tag: "meta",
           attrs: {
             property: "twitter:image",
-            content: "https://screwfast.uk" + "/social.webp",
+            content: "https://www.arenda.ge" + "/social.webp",
           },
         },
       ],

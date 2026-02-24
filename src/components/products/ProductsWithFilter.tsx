@@ -21,7 +21,6 @@ interface ProductsWithFilterProps {
 
 // ─── tiny ProductCard (replace with your real card or pass as slot) ────────────
 function ProductCard({ product }: { product: Product }) {
-  console.log(product);
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow dark:border-neutral-700 dark:bg-neutral-900 w-full sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] flex flex-col">
     <a href={`/products/${product.slug}`} className="block flex-1 flex flex-col">
